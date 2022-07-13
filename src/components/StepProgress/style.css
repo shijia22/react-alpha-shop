@@ -1,0 +1,13 @@
+.progress-text:nth-child(1) .circle::after{
+  content: '1';
+}
+.progress-text:nth-child(3) .circle::after{
+  content: '2';
+}
+.progress-text:nth-child(5) .circle::after{
+  content: '3';
+}
+
+.progress-text {
+  color: #afb1bd;
+}
