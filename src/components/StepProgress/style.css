@@ -1,0 +1,37 @@
+/* .progress-text:nth-child(1) .circle::after{
+  content: '1';
+} */
+.progress-text:nth-child(3) .circle::after{
+  content: '2';
+}
+.progress-text:nth-child(5) .circle::after{
+  content: '3';
+}
+
+.progress-text {
+  color: #afb1bd;
+}
+
+.checked {
+  background-color: #333333;
+}
+
+.checked::after {
+  content: '\2714';
+  color: white;
+}
+
+.circle {
+  height: 24px;
+  width: 24px;
+  padding: 4px;
+  border: 1px solid #333333;
+  border-radius: 24px;
+  color: #333333;
+}
+
+.line {
+  height: 2px;
+  width: 60px;
+  background-color: #333333;
+}
