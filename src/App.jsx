@@ -5,6 +5,7 @@ import Header from '../src/components/Header'
 import ProgressControl from '../src/components/ProgressControl';
 import Cart from '../src/components/Cart';
 import Step1 from '../src/components/Step1';
+import Step2 from '../src/components/Step2';
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
       <div className="flex">
         <div className="flex-grow mr-[8.125rem]">
           <Step1 />
+          <Step2 />
           <ProgressControl />
         </div>
         <div className="w-2/5">
