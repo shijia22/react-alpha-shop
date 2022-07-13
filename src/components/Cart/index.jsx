@@ -7,7 +7,7 @@ const Cart = () => {
       <div
         className="mb-8 flex justify-between">
         <img alt="" src='https://fakeimg.pl/300x300/' className='w-[100px] h-[100px]'/>
-        <div className="items-center min-w-[200px]">
+        <div className="items-center min-w-[100px]">
           <span>貓貓罐罐</span>
           <div className="flex justify-between mt-4">
             <button className="w-6 h-6 rounded-3xl bg-[#f0f0f5]">-</button>
@@ -20,7 +20,7 @@ const Cart = () => {
       <div
         className="mb-8 flex justify-between">
         <img alt="" src='https://fakeimg.pl/300x300/' className='w-[100px] h-[100px]' />
-        <div className="items-center min-w-[200px]">
+        <div className="items-center min-w-[100px]">
           <span>貓貓肉乾</span>
           <div className="flex justify-between mt-4">
             <button className="w-6 h-6 rounded-3xl bg-[#f0f0f5]">-</button>
