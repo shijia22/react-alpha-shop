@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="px-40 max-w-[1440px] min-h-screen">
       <Header />
-      <h1 className="mb-12">結帳</h1>
+      <h1 className="my-12 text-[32px] font-bold">結帳</h1>
       <StepProgress/>
       <div className="flex">
         <div className="flex-grow mr-[8.125rem]">

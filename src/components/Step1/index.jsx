@@ -3,7 +3,7 @@ import { React } from 'react';
 const Step1 = () => {
   return (
     <div>
-      <h2 className="mb-8">寄送地址</h2>
+      <h2 className="mb-8 font-bold text-2xl">寄送地址</h2>
       <form className="w-full mb-12 grid gap-y-6 auto-rows-[minmax(4rem, auto)]">
         <div className="grid grid-cols-3 gap-x-7">
           <div className="col-span-1 flex flex-col items-stretch">

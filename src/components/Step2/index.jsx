@@ -3,7 +3,7 @@ import { React } from 'react';
 const Step2 = () => {
   return (
     <div>
-      <h2 class="mb-8">運送方式</h2>
+      <h2 class="mb-8 font-bold text-2xl">運送方式</h2>
       <form class="mb-36">
       <div
           class="p-5 mb-6 flex items-center border border-[#f0f0f5] rounded focus:border-[#2a2a2a] hover:border-[#2a2a2a]">
