@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './App.css'
 import StepProgress from '../src/components/StepProgress';
 import Header from '../src/components/Header'
+import Footer from '../src/components/Footer'
 import ProgressControl from '../src/components/ProgressControl';
 import Cart from '../src/components/Cart';
 import Step1 from '../src/components/Step1';
@@ -26,6 +27,7 @@ function App() {
           <Cart />
         </div>
       </div>
+      <Footer />
     </div>
   )
 }
