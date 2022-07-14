@@ -5,7 +5,7 @@ const StepProgress = () => {
   return (
   <div className="mb-16 flex justify-between items-center w-1/2">
     <div className="progress-text flex items-center">
-      <span className="circle flex justify-center mr-2 items-center"
+      <span className="circle flex justify-center mr-2 items-center checked"
         ></span>
       寄送地址
     </div>
