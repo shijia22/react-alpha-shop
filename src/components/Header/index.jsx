@@ -3,7 +3,7 @@ import { React } from 'react';
 const Header = () => {
   return (
     <header className="p-4 border-b-4">
-      <ul class="flex">
+      <ul className="flex">
       <li className="mr-5">男款</li>
       <li className="mr-5">女款</li>
       <li className="mr-5">最新消息</li>
