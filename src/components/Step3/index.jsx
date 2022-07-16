@@ -11,7 +11,7 @@ const Step3 = () => {
             <input
               type="text"
               placeholder="John Doe"
-              className="py-3 pl-4 border border-[##4a4a4a] rounded"
+              className="py-3 pl-4 border border-grey-300 rounded"
             />
           </div>
         </div>
@@ -21,7 +21,7 @@ const Step3 = () => {
             <input
               type="text"
               placeholder="1111 2222 3333 4444"
-              className="py-3 pl-4 border border-[##4a4a4a] rounded"
+              className="py-3 pl-4 border border-grey-300 rounded"
             />
           </div>
         </div>
@@ -31,12 +31,12 @@ const Step3 = () => {
             <input
               type="text"
               placeholder="MM/YY"
-              className="py-3 pl-4 border border-[##4a4a4a] rounded"
+              className="py-3 pl-4 border border-grey-300 rounded"
             />
           </div>
           <div className="flex flex-col items-stretch col-span-2">
             <label for="cc-csc">CVC/CCV</label>
-            <input type="text" placeholder="123" className="py-3 pl-4 border border-[##4a4a4a] rounded" />
+            <input type="text" placeholder="123" className="py-3 pl-4 border border-grey-300 rounded" />
           </div>
         </div>
       </form>
