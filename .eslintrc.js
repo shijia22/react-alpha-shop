@@ -24,6 +24,15 @@ module.exports = {
     'global-require': 0,
     'import/no-extraneous-dependencies': 0,
     'import/no-import-module-exports': 0,
+    "import/extensions": [
+      "error",
+      "always",
+      "ignorePackages",
+      {
+        js: "never",
+        jsx: "never",
+      },
+    ],
     'jsx-a11y/click-events-have-key-events': 0,
     'jsx-a11y/label-has-associated-control': 0,
     'jsx-a11y/no-noninteractive-element-interactions': 0,
