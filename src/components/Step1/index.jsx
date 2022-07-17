@@ -7,30 +7,30 @@ const Step1 = () => {
       <form className="w-full mb-12 grid gap-y-6 auto-rows-[minmax(4rem, auto)]">
         <div className="grid grid-cols-3 gap-x-7">
           <div className="col-span-1 flex flex-col items-stretch">
-            <label for="gender">稱謂</label>
+            <label htmlFor="gender">稱謂</label>
             <select name="gender" className="py-3 pl-4 border border-grey-300 rounded">
               <option value="mr">先生</option>
               <option value="ms">女士</option>
             </select>
           </div>
           <div className="col-span-2 flex flex-col items-stretch">
-            <label for="name">姓名</label>
+            <label htmlFor="name">姓名</label>
             <input type="text" placeholder="請輸入姓名" className="py-3 pl-4 border border-grey-300 rounded" />
           </div>
         </div>
         <div className="grid grid-cols-4 gap-7">
           <div className="flex flex-col items-stretch col-span-2">
-            <label for="phone">電話</label>
+            <label htmlFor="phone">電話</label>
             <input type="text" placeholder="請輸入行動電話" className="py-3 pl-4 border border-grey-300 rounded" />
           </div>
           <div className="flex flex-col items-stretch col-span-2">
-            <label for="mail">Email</label>
+            <label htmlFor="mail">Email</label>
             <input type="text" placeholder="請輸入電子郵件" className="py-3 pl-4 border border-grey-300 rounded" />
           </div>
         </div>
         <div className="grid grid-cols-3 gap-x-7">
           <div className="flex flex-col items-stretch col-span-1">
-            <label for="city">縣市</label>
+            <label htmlFor="city">縣市</label>
             <select name="city" className="py-3 pl-4 border border-grey-300 rounded">
               <option value="">請選擇縣市</option>
               <option value="TPE">臺北市</option>
@@ -38,7 +38,7 @@ const Step1 = () => {
             </select>
           </div>
           <div className="flex flex-col items-stretch col-span-2">
-            <label for="address">地址</label>
+            <label htmlFor="address">地址</label>
             <input type="text" placeholder="請輸入地址" className="py-3 pl-4 border border-grey-300 rounded" />
           </div>
         </div>
