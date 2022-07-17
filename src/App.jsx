@@ -12,7 +12,7 @@ import Step3 from "@/components/Step3";
 
 const App = () => {
   return (
-    <div className="px-40 min-w-[1440px] min-h-screen">
+    <div className="px-40 min-h-screen">
       <Header />
       <h1 className="my-12 text-[32px] font-bold">結帳</h1>
       <StepProgress />
