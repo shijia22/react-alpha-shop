@@ -27,7 +27,7 @@ const App = () => {
     <div className="px-40 min-h-screen">
       <Header />
       <h1 className="my-12 text-[32px] font-bold">結帳</h1>
-      <StepProgress />
+      <StepProgress step={step} />
       <div className="flex">
         <div className="flex-grow mr-[8.125rem]">
           {step === 1 && <Step1 />}
