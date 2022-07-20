@@ -1,6 +1,6 @@
-/* .progress-text:nth-child(1) .circle::after{
+.progress-text:nth-child(1) .circle::after{
   content: '1';
-} */
+}
 .progress-text:nth-child(3) .circle::after{
   content: '2';
 }
@@ -12,12 +12,17 @@
   color: #afb1bd;
 }
 
-.checked {
-  background-color: #333333;
+.progress-text.checked .circle::after {
+  content: '\2714';
+  color: white;
 }
 
-.checked::after {
-  content: '\2714';
+.progress-text.checked, .progress-text.active {
+  color: #333333;
+}
+
+.progress-text.checked .circle, .progress-text.active .circle {
+  background-color: #333333;
   color: white;
 }
 
@@ -33,5 +38,9 @@
 .line {
   height: 2px;
   width: 60px;
+  background-color: #afb1bd;
+}
+
+.line.checked, .line.active {
   background-color: #333333;
 }
