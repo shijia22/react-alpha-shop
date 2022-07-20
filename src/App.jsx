@@ -10,7 +10,19 @@ import Step1 from "@/components/Step1";
 import Step2 from "@/components/Step2";
 import Step3 from "@/components/Step3";
 
+
 const App = () => {
+  const [step, setStep] = React.useState(1);
+
+  const PrevStep = () => {
+    if (step === 1) return;
+    setStep((prev) => prev - 1);
+  };
+
+  const NextStep = () => {
+    if (step === 3) return;
+    setStep((prev) => prev + 1);
+  };
   return (
     <div className="px-40 min-h-screen">
       <Header />
@@ -18,10 +30,13 @@ const App = () => {
       <StepProgress />
       <div className="flex">
         <div className="flex-grow mr-[8.125rem]">
-          <Step1 />
-          <Step2 />
-          <Step3 />
-          <ProgressControl />
+          {step === 1 && <Step1 />}
+          {step === 2 && <Step2 />}
+          {step === 3 && <Step3 />}
+          <ProgressControl
+            step={step}
+            atPrevStep={PrevStep}
+            atNextStep={NextStep} />
         </div>
         <div className="w-2/5">
           <Cart />
