@@ -21,7 +21,7 @@ const LineItem = () => {
   const list = []
 
   for (const [i, product] of products.entries()) {
-    list.push(<div className="mb-8 flex justify-between">
+    list.push(<div className="mb-8 flex justify-between" key={product.id}>
       <img alt="" src={product.img} className='w-[100px] h-[100px]' />
       <div className="items-center min-w-[100px]">
         <span>{product.name}</span>
