@@ -1,7 +1,7 @@
-import { React } from 'react';
+import React from 'react';
 import LineItem from '../Cart/LineItem';
 
-const Cart = () => {
+const Cart = React.memo(() => {
   return (
     <div className="container py-8 px-6 border divide-[#f0f0f5] rounded-lg">
       <h2 className="mb-8">購物籃</h2>
@@ -16,5 +16,5 @@ const Cart = () => {
       </div>
     </div >
   );
-};
+});
 export default Cart;

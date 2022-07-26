@@ -1,6 +1,6 @@
-import { React } from 'react';
+import React from 'react';
 
-const Header = () => {
+const Header = React.memo(() => {
   return (
     <header className="p-4 border-b-4">
       <ul className="flex">
@@ -12,5 +12,5 @@ const Header = () => {
       </ul>
     </header>
   );
-};
+});
 export default Header;
