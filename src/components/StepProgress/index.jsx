@@ -14,7 +14,7 @@ const StepProgress: React.FC<StepProgressProps> = ({ step }) => {
         寄送地址
       </div>
       <div className="line active" />
-      <div className={`progress-text flex items-center ${step === 1 ? '' : 'active'}  ${step === 3 ? 'checked' : ''}`}>
+      <div className={`progress-text flex items-center ${step === 2 && 'active'}  ${step > 2 && 'checked'}`}>
         <span className={`circle flex justify-center mr-2 items-center ${step <= 2 ? 'active' : 'checked'}`} />
         運送方式
       </div>
