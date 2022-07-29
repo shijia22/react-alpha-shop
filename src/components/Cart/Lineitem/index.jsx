@@ -1,6 +1,6 @@
 import { React } from 'react';
 
-const LineItem = () => {
+const ListItem = () => {
   const products = [
     {
       id: '1',
@@ -42,4 +42,4 @@ const LineItem = () => {
   )
 }
 
-export default LineItem;
+export default ListItem;
