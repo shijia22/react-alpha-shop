@@ -1,9 +1,27 @@
-import React, { useContext } from 'react';
+import React, { useContext, useCallback, useState } from 'react';
 import CartContext from "../../context/CartContext";
 import ListItem from '../Cart/Lineitem';
 
 const Cart = React.memo((props) => {
   const data = useContext(CartContext);
+  const [items, setItems] = useState(data.items);
+
+  const onPlusItem = useCallback((id, quantity) => {
+    const newItems = data.cartItems.map((item) => {
+      if (item.id === id) return item.quantity += 1
+    })
+    return setItems(newItems);
+  });
+
+  const onMinusItem = useCallback((id, quantity) => {
+    const minusItems = data.cartItems.map((item) => {
+      if (item.id === id && item.quantity >= 1) {
+        return item.quantity -= 1
+      }
+    })
+    return setItems(minusItems);
+  });
+
 
   const listItem = data.cartItems.map((item) => {
     return (
@@ -14,6 +32,8 @@ const Cart = React.memo((props) => {
         img={item.img}
         price={item.price}
         quantity={item.quantity}
+        plusItem={onPlusItem}
+        minusItem={onMinusItem}
       />
     );
   });
