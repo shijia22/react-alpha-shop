@@ -22,6 +22,7 @@ const Cart = React.memo((props) => {
     return setItems(minusItems);
   });
 
+  const total = data.cartItems.reduce((prev, cur) => prev + cur.price * cur.quantity, 0);
 
   const listItem = data.cartItems.map((item) => {
     return (
@@ -48,7 +49,7 @@ const Cart = React.memo((props) => {
       </div>
       <div className="my-4 flex justify-between">
         <span>小計</span>
-        <span>$ 5000</span>
+        <span>$ {total}</span>
       </div>
     </div >
   );
