@@ -41,7 +41,7 @@ const Cart = React.memo((props) => {
   return (
     <div className="container py-8 px-6 border divide-[#f0f0f5] rounded-lg">
       <h2 className="mb-8">購物籃</h2>
-      <ListItem />
+      {listItem}
       <div className="pt-5 pb-8 my-4 flex justify-between">
         <span>運費</span>
         <span>$ 500</span>
