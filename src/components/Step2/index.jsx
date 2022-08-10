@@ -1,19 +1,24 @@
-import  React  from 'react';
 
-const Step2 = () => {
+// @flow
+import React, { useCallback }  from 'react';
+import CartContext from "../../context/CartContext";
+
+const Step2 = (props) => {
+  const { onSelectDelivery } = props;
+
   const deliveryItems = [
     {
       id: '1',
       item: '標準運送',
       price: '免費',
-      value: '0',
+      value: 0,
       days: '約 3~7 個工作天'
     },
     {
       id: '2',
       item: 'DHL 貨運',
       price: `$ ${500}`,
-      value: '500',
+      value: 500,
       days: '48 小時內送達'
     }
   ]
@@ -23,7 +28,7 @@ const Step2 = () => {
       <form className="mb-36">
         {deliveryItems.map((item) => (<div key={item.id} className="p-5 mb-6 flex items-center border border-[#f0f0f5] rounded focus:border-grey-500 hover:border-grey-500">
           <input
-            type="radio" className="mr-5 w-[20px] h-[20px] opacity-100" />
+            onChange={() => { onSelectDelivery(item.value); }} name="deliveryItem" type="radio" className="mr-5 w-[20px] h-[20px] opacity-100" value={item.value}/>
           <div className="flex-grow">
             <div className="flex justify-between">
               <span>{item.item}</span>
@@ -37,3 +42,5 @@ const Step2 = () => {
   );
 };
 export default Step2;
+
+
