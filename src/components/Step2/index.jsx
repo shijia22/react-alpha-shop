@@ -6,14 +6,14 @@ const Step2 = () => {
       id: '1',
       item: '標準運送',
       price: '免費',
-      value: '0',
+      value: 0,
       days: '約 3~7 個工作天'
     },
     {
       id: '2',
       item: 'DHL 貨運',
       price: `$ ${500}`,
-      value: '500',
+      value: 500,
       days: '48 小時內送達'
     }
   ]
