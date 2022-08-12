@@ -3,7 +3,9 @@
 import React, { useCallback }  from 'react';
 import CartContext from "../../context/CartContext";
 
-const Step2 = () => {
+const Step2 = (props) => {
+  const { onSelectDelivery } = props;
+
   const deliveryItems = [
     {
       id: '1',
