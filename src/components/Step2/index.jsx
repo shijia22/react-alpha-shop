@@ -28,7 +28,7 @@ const Step2 = (props) => {
       <form className="mb-36">
         {deliveryItems.map((item) => (<div key={item.id} className="p-5 mb-6 flex items-center border border-[#f0f0f5] rounded focus:border-grey-500 hover:border-grey-500">
           <input
-            onChange={() => { onSelectDelivery(item.value); }} type="radio" className="mr-5 w-[20px] h-[20px] opacity-100" />
+            onChange={() => { onSelectDelivery(item.value); }} name="deliveryItem" type="radio" className="mr-5 w-[20px] h-[20px] opacity-100" value={item.value}/>
           <div className="flex-grow">
             <div className="flex justify-between">
               <span>{item.item}</span>
