@@ -11,9 +11,11 @@ import Step2 from "@/components/Step2";
 import Step3 from "@/components/Step3";
 import CartContext from "@/context/CartContext";
 import cartItems from "./data/items";
+import useShoppingCart from '../src/hooks/useShoppingCart';
 
 const App = () => {
   const [step, setStep] = React.useState(1);
+  const [state, dispatch] = useShoppingCart();
 
   const PrevStep = () => {
     if (step === 1) return;
@@ -23,11 +25,20 @@ const App = () => {
     if (step === 3) return;
     setStep((prev) => prev + 1);
   };
+
+  const providerValue = useMemo(() => {
+    return {
+      state,
+      dispatch,
+      step,
+    };
+  }, [state, dispatch, step]);
+
   return (
     <div className="px-40 min-h-screen">
       <Header />
       <h1 className="my-12 text-[32px] font-bold">結帳</h1>
-      <CartContext.Provider value={{ step: step, cartItems: cartItems }}>
+      <CartContext.Provider value={{ providerValue }}>
         <StepProgress step={step} />
         <div className="flex">
           <div className="flex-grow mr-[8.125rem]">
