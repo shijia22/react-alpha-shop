@@ -17,7 +17,7 @@ const Cart = React.memo((props) => {
 
   const total = deliveryValue + state.cartItems.reduce((prev, cur) => prev + cur.price * cur.quantity, 0);
 
-  const listItem = data.cartItems.map((item) => {
+  const listItem = state.cartItems.map((item) => {
     return (
       <ListItem
         key={item.id}
