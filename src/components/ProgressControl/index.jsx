@@ -3,23 +3,21 @@ import  React  from 'react';
 
 type ProgressControlProps = {
   step: Number,
-  PrevStep: Function,
-  NextStep: Function,
+  onChangeStep: () => void,
 };
 
 const ProgressControl: React.FC<ProgressControlProps> = ({
   step,
-  atPrevStep,
-  atNextStep,
+  onChangeStep
 }) => {
   return (
     <div className="pt-6 flex justify-between border-t">
       <button
-        className={`back flex items-center py-4 px-8 ${step !== 1 ? 'visible' : 'invisible'}`} onClick={atPrevStep}>
+        className={`back flex items-center py-4 px-8 ${step !== 1 ? 'visible' : 'invisible'}`} onClick={() => onChangeStep(-1)}>
         {step !== 1 && <img src="../images/left.png" alt="" className="w-6 h-6 mr-3" />}
         上一步</button>
       <button
-        className={`flex items-center py-4 px-8 rounded-lg bg-secondary text-white ${step !== 3 ? 'visible' : 'invisible'}`} onClick={atNextStep}>
+        className={`flex items-center py-4 px-8 rounded-lg bg-secondary text-white ${step !== 3 ? 'visible' : 'invisible'}`} onClick={() => onChangeStep(1)}>
         下一步
         {step !== 3 && <img src="../images/right.png" alt="" className="w-6 h-6 mr-3" />}
       </button>
