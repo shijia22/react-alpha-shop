@@ -1,28 +1,21 @@
 import React, { useContext, useCallback, useState } from 'react';
 import CartContext from "../../context/CartContext";
 import ListItem from '../Cart/Lineitem';
+import { cartActions } from '../../hooks/useShoppingCart';
+import reducer from '../../hooks/useShoppingCart';
 
 const Cart = React.memo((props) => {
   const data = useContext(CartContext);
-  const [items, setItems] = useState(data.items);
+  const deliveryValue = data.deliveryValue;
+  const [state, dispatch] = reducer();
 
-  const onPlusItem = useCallback((id, quantity) => {
-    const newItems = data.cartItems.map((item) => {
-      if (item.id === id) return item.quantity += 1
-    })
-    return setItems(newItems);
-  });
+  const onChangeQuantity = useCallback((id, num) => {
+    dispatch({ type: cartActions.changeQuantity, payload: { id, num } });
+  },
+    [dispatch]
+  );
 
-  const onMinusItem = useCallback((id, quantity) => {
-    const minusItems = data.cartItems.map((item) => {
-      if (item.id === id && item.quantity >= 1) {
-        return item.quantity -= 1
-      }
-    })
-    return setItems(minusItems);
-  });
-
-  const total = data.cartItems.reduce((prev, cur) => prev + cur.price * cur.quantity, 0);
+  const total = deliveryValue + state.cartItems.reduce((prev, cur) => prev + cur.price * cur.quantity, 0);
 
   const listItem = data.cartItems.map((item) => {
     return (
@@ -33,8 +26,7 @@ const Cart = React.memo((props) => {
         img={item.img}
         price={item.price}
         quantity={item.quantity}
-        plusItem={onPlusItem}
-        minusItem={onMinusItem}
+        onChangeQuantity={onChangeQuantity}
       />
     );
   });
@@ -45,7 +37,7 @@ const Cart = React.memo((props) => {
       {listItem}
       <div className="pt-5 pb-8 my-4 flex justify-between">
         <span>運費</span>
-        <span>$ 500</span>
+        <span>$ {deliveryValue}</span>
       </div>
       <div className="my-4 flex justify-between">
         <span>小計</span>

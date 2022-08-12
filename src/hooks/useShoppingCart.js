@@ -1,71 +1,39 @@
 // @flow
 import React from 'react';
-import { cartItems } from "../data/items";
-import { type Action } from '../hooks/actions';
+import cartItems from "../data/items";
 
-const initialState: State = {
-  listItems: [],
-  totalAmount: 0,
-  delivery: {
-    id: '',
-    item: '',
-    price: '',
-    days: ''
-  },
+const initialState = { step: 1, cartItems, deliveryValue: 0 };
+
+export const cartActions = {
+  changeQuantity: "CHANGE_QUANTITY",
+  changeStep: "CHANGE_STEP",
+  selectDelivery: "SELECT_Delivery",
 };
 
-const calcTotalAmount = (listItems: ListItems[], delivery: Delivery): State => {
-  const result = listItems.reduce((total, currentItem) => {
-    return total + currentItem.price * currentItem.quantity;
-  }, 0);
-
-  if (delivery.price === '') {
-    return result;
-  }
-  return result + delivery.price;
-};
-
-initialState.totalAmount = calcTotalAmount(
-  initialState.listItems,
-  initialState.delivery,
-);
-
-const reducer = (state: State, action: Action): State => {
+const reducer = (state, action) => {
   switch (action.type) {
-    case 'UPDATE_QUANTITY': {
-      const { id, quantity } = action.payload;
-      const { listItems, delivery } = state;
-      const newListItems = listItems.map((item) => {
-        if (item.id === id) {
+    case "CHANGE_QUANTITY":
+      const { id, num } = action.payload;
+      const newListItems = state.cartItems.map((item) => {
+        if (item.id === id && item.quantity + num > 0) {
           return {
             ...item,
-            quantity: item.quantity + quantity,
+            quantity: item.quantity + num,
           };
         }
         return item;
-      })
-    }
+      });
+      return { ...state, cartItems: newListItems };
+    case "CHANGE_STEP":
+      const nextStep = state.step + action.payload.changeStep;
+      if (nextStep < 1 || nextStep > 3) return;
+      return { ...state, step: state.step + action.payload.changeStep };
 
-    case 'REMOVE_QUANTITY': {
-      const { payload } = action;
-      const { listItems, delivery } = state;
-      const newListItems = listItems.filter((item) => item.id !== payload);
-      return {
-        ...state,
-        listItems: newListItems,
-        totalAmount: calcTotalAmount(newListItems, delivery),
-      };
-    }
-    case 'CHANGE_DELIVERY': {
-      const selectDelivery = action.payload;
-      return {
-        ...state,
-        delivery: selectDelivery,
-        totalAmount: calcTotalAmount(state.listItems, selectDelivery),
-      };
-    }
+    case "SELECT_Delivery":
+      return { ...state, deliveryValue: action.payload };
+
     default:
-      return state;
+      return { ...state };
   }
 };
 
